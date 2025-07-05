@@ -26,7 +26,7 @@ print(swap_ends(my_str))
         else:
             return True
         
-    alphabet = ['a', 'b,','c','d', 'e', 'f', 'g', 'h', 'i','j','k','l','m','n','o','p','q', 'r','s', 't', 'u'
+    alphabet = ['a', 'b','c','d', 'e', 'f', 'g', 'h', 'i','j','k','l','m','n','o','p','q', 'r','s', 't', 'u',
     'v', 'w', 'x', 'y', 'z']
     
     for i in alphabet:
@@ -44,7 +44,7 @@ print(is_pangram(str2))'''
 # if length < 26, return false
 # split, check if each letter is in the list of letters
 
-def first_unique_char(my_str):
+'''def first_unique_char(my_str):
     frequency_map = {}
     for item in my_str:
         if item in frequency_map:
@@ -66,6 +66,129 @@ def first_unique_char(my_str):
 first_unique_char("bananabs")
 first_unique_char("leetcode")
 first_unique_char("loveleetcode")
-first_unique_char("aabb")
+first_unique_char("aabb")'''
 
+
+#######################
+
+'''def reverse_words(s):
+    #remove whitespaces
+    s = s.split()
+
+# we want to get each word, which can be detected by the space
+# then create a new string that prints the words backwards
+    return " ".join(s[::-1])       # reverses the list
+
+    # s.reverse() will also reverse the words in the list 
+
+s = "  the sky is blue     "
+print(reverse_words(s))
+
+set(my_str) # strips every letter and disregards duplicates'''
+
+
+# problem 1
+'''def sum_of_number_strings(nums):
+    # turn strings into integers, 
+    newList = []
+    result = 0
+    for i in nums:
+        i = int(i)
+        newList.append(i)
+        # print(newList) # new list of all ints [10,20,30]
+    # add all vals in list
+    for i in range(len(newList)):
+        # get current num, add it to total result, move on
+        result += newList[i]
+    return result
+        
+
+
+nums = ["10", "20", "30"]
+sum = sum_of_number_strings(nums)
+print(sum)'''
+
+# problem 2
+'''def remove_duplicates(nums):
+    # use a frequency dictionary, add new vals that have no freq to the new list, if it already exists, just skip
+    frequency_map = {}
+    newList = []
+    for item in nums:
+        if item in frequency_map:
+            frequency_map[item] += 1
+        else:
+            frequency_map[item] = 1
+            newList.append(item)
+
+    return newList
+
+nums = [1,1,1,2,3,4,4,5,6,6]
+print(remove_duplicates(nums))
+# no_dups = [1,2,3,4,5,6]'''
+
+# problem 3
+'''def reverse_only_letters(s):
+    # go through each char, if isalpha(), add to a list until a new str is created where its just letters
+    # reverse that new str
+    # get positions of the non alphabetic chars, print out letters backwards with alphabet
+    # go through the str, if char isalpha, add to newstr and take note of its position (use enumerate)
+    str = ""
+    for char in s:
+        if char.isalpha():
+            str += char
+    str = str[::-1]     #string has been reversed
+
+    result = []
+    index = 0
+    for i in s:
+        if i.isalpha():
+            result.append(str[index])
+            index +=1
+        else:
+            result.append(i)
+
+    return "".join(result)
+
+
+
+
+s = "a-bC-dEf-ghIj"
+reversed_s = reverse_only_letters(s)
+print(reversed_s)'''
+
+
+'''word = "encourage"
+char_count = {}
+
+for char in word:
+    if char not in char_count:
+        char_count[char] = 1
+    else:
+        char_count[char] += 1
+
+char_count['e'] +=2
+print(char_count['e'])'''
+
+
+# problem 4
+'''def longest_uniform_substring(s):
+    # go through the list, frequency table? whatever is highest, return that value
+    frequency_map = {}
+    for letter in s:
+        if letter in frequency_map:
+            frequency_map[letter] +=1
+        else:
+            frequency_map[letter] = 1
+    for i in frequency_map:
+        return max(frequency_map.values())
+
+
+
+s1 = "aabbbbCdAA"
+l1 = longest_uniform_substring(s1)
+print(l1)
+
+s2 = "abcdef"
+l2 = longest_uniform_substring(s2)
+print(l2)'''
 
